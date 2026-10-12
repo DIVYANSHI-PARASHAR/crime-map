@@ -1,0 +1,40 @@
+{
+  "id": "javelin-throw",
+  "name": "Javelin Throw",
+  "description": "Third-person javelin throw — walk into the white circle; 1 take position, 2 pick up, 3 throw",
+  "image": {
+    "label": "Javelin Throw",
+    "src": "/lingbot-cases/javelin-throw-user.jpg"
+  },
+  "scene": {
+    "base": {
+      "default": "A realistic javelin throw competition on an overcast day, matching the supplied starting image. Exactly one adult athlete in a plain blue shirt, blue shorts, and blue shoes stands empty-handed at the near left side of a red synthetic throwing runway. A single large white standing circle is painted ahead in the middle of the runway; the athlete begins outside it and must walk into its center. Exactly one blue-and-silver javelin lies horizontally across a low blue-topped stand immediately to the circle's right, close enough to reach while standing in the circle. Ahead is a green landing field bounded by two straight white sector lines, with three orange cone markers down its center. Keep the stadium seating at the sides, distant fence and trees, runway borders, circle, stand, javelin, sector lines, and cones in the same positions and colors as the image. The attempt has three ordered actions after walking into the circle: take position, pick up the single javelin, then throw it toward the cone markers. The athlete remains inside the circle during these actions. The javelin has one continuous identity: it begins on the stand, stays in the athlete's hand after pickup, and after the throw flies into the field and lands in the grass. It never duplicates, reappears on the stand, or changes into another object. No action occurs without player movement or its numbered event input. No other athlete or official enters the frame. Daylight remains steady."
+    },
+    "camera": {
+      "default": {
+        "static": "One continuous wide third-person rear view at the image's slightly elevated camera height. The single full-body athlete occupies the lower-left of the frame, with the whole empty white circle ahead in the center and the javelin stand to its right. The camera stays still while the player is still. There are no cuts, close-up hands, reverse shots, or new people; look input alone changes the camera direction.",
+        "dynamic": "One continuous wide third-person follow view from behind the same athlete, preserving a comfortable full-body distance and the image's slightly elevated height. The camera follows only player movement so the standing circle and javelin stand shift with natural perspective as the athlete walks toward them. It does not swing around, cut, zoom, or change to first-person view."
+      }
+    },
+    "movement": {
+      "default": {
+        "static": "Without movement input, the athlete stands still at the current position. The athlete is inside the white circle only after the player has walked there. Before pickup both hands are empty and the one javelin stays on the stand; after pickup the stand stays empty and the same javelin remains in the athlete's hand. The circle, stand, sector lines, and three orange cones remain fixed.",
+        "dynamic": "Player movement makes the athlete walk naturally along the red runway toward or away from the white standing circle, with matching camera motion and believable parallax. Walking forward can bring both feet into the circle; stopping input stops the athlete at that position. The athlete does not automatically enter the circle, take a stance, pick up the javelin, or throw it."
+      }
+    },
+    "events": [
+      {
+        "name": "Take Position",
+        "detail": "Only when both of the athlete's feet are inside the white circle, the athlete stops in its center, faces the green landing sector, plants both feet, and settles into a balanced ready stance. Both hands remain empty and the single javelin stays on the stand to the right. This action neither moves the athlete into the circle nor picks up or throws the javelin."
+      },
+      {
+        "name": "Pick Up Javelin",
+        "detail": "Only after the athlete has taken position inside the white circle, the athlete reaches to the stand on the right and lifts its one blue-and-silver javelin in a single simple motion. The athlete holds that same javelin beside the throwing shoulder while staying inside the circle; the stand is now empty. Releasing key 2 does not put the javelin back or create another one."
+      },
+      {
+        "name": "Throw Javelin",
+        "detail": "Only after the athlete is standing inside the white circle with the single javelin in hand, one smooth forward throwing motion releases that javelin once toward the center of the green landing sector. It flies point-first between the white sector lines and lands in the grass near the orange cone markers. The athlete remains inside the circle with an empty throwing hand and the stand remains empty. Holding key 3 does not produce repeated throws or extra javelins."
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "dino-runner",
+  "name": "3D Dino Runner",
+  "description": "Hold W to move · Space to jump · hold C to duck",
+  "image": {
+    "label": "3D Dino Runner",
+    "src": "/lingbot-cases/dino-runner.jpg"
+  },
+  "scene": {
+    "base": {
+      "default": "A playable 3D version of the classic browser dinosaur game, preserving the supplied starting image. Exactly one small charcoal-gray blocky Tyrannosaurus rex is seen from behind in the lower center of the frame. It occupies one straight, broad, pale cream-colored track through a flat gray desert. The dinosaur has the same square head, short arms, thick tail, dark voxel texture, and scale in every frame. Low-poly gray cacti, scattered rocks, and block-shaped clouds occupy consistent positions in the sparse desert; a single gray pterodactyl is ahead over the track. Restrained monochrome and warm ivory palette, soft daylight, sharp pixel-like silhouettes, no realistic skin, no extra dinosaurs, no people, no weapons, no scene cuts. The track continues straight toward a distant vanishing point. At the start, the dinosaur stands still in its normal upright pose and the track is stationary. There is no automatic running, obstacle movement, jumping, or ducking. W input moves the dinosaur forward; releasing W stops forward motion. Space input triggers one jump. Holding C makes the SAME dinosaur visibly lower its head, shoulders, and body into a compact ducking pose until C is released; releasing C returns it to the normal upright pose. C never spawns a second character or changes the camera. Cacti and birds are obstacles only when the player approaches them. Preserve the small pixel-score style in the upper right without changing the camera into a title screen."
+    },
+    "camera": {
+      "default": {
+        "static": "One uninterrupted third-person chase view directly behind the single dinosaur. Keep it centered and fully visible at the same comfortable distance; the straight track and vanishing point stay ahead. If there is no movement input, keep the viewpoint fixed. During a C hold, show the dinosaur's lower crouched silhouette clearly. No camera cuts, turns, zooms, or first-person view.",
+        "dynamic": "The camera follows behind the same dinosaur at a fixed distance and height while the player moves. The dinosaur stays centered while track markings, cacti, rocks, and clouds shift with natural forward parallax. During jump and duck the camera keeps the whole dinosaur visible without tilting or changing sides."
+      }
+    },
+    "movement": {
+      "default": {
+        "static": "Without W input, the dinosaur does not run and the environment does not scroll. It may remain upright, jump once if Space is pressed, or hold a low ducking pose while C is held. No obstacle approaches on its own.",
+        "dynamic": "Only while W is held, the same dinosaur runs forward down the center of the straight track at a steady pace. Its legs cycle naturally; its body and tail retain their shape. The track and obstacles pass with forward parallax. Releasing W stops the run promptly. Forward motion alone never causes a jump or duck; the player controls those actions separately."
+      }
+    },
+    "events": [],
+    "jumpPrompt": "Player jump input: the same dinosaur makes one clear upward leap over the approaching ground cactus, tucks its legs, then lands on the same track and resumes its normal run. The cactus passes beneath and behind it. No second dinosaur appears, and the camera remains behind the runner.",
+    "crouchPrompt": "C IS CURRENTLY HELD. The one and only dinosaur visibly ducks NOW: its head, shoulders, neck, and torso stay low near the track, its knees bend, and its back is clearly lower than before. Keep this compact crouched silhouette continuously for the entire C hold, whether standing in place or moving with W. It does not jump, run by itself, turn, or spawn another dinosaur. Keep the camera at the same height and angle so the lower body posture is obvious.",
+    "standPrompt": "C HAS BEEN RELEASED. The same dinosaur rises back to its normal upright height in the same place, without moving forward unless W is held."
+  }
+}

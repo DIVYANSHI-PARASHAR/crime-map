@@ -1,0 +1,27 @@
+{
+  "id": "manhattan-crime-scene-v2",
+  "name": "Manhattan Crime Scene",
+  "description": "Explore the apartment and find the person hiding inside. Gemini watches the frames and guides the scene.",
+  "image": {
+    "label": "Manhattan Crime Scene",
+    "src": "/lingbot-cases/manhattan-crime-scene-v2.jpg"
+  },
+  "scene": {
+    "base": {
+      "default": "Photorealistic first-person exploration of the exact Manhattan apartment in the supplied starting image. The viewpoint belongs to an unseen civilian investigator at natural eye height. The investigator is never visible: no hands, arms, body, face, reflection, camera equipment, or separate investigator standing in front of the lens. Preserve the image's fixed geography: red leather sofa beneath a large abstract painting on the left; wall clock; low dark wooden coffee table with a broken whiskey glass and yellow evidence marker 1; overturned chair and marker 2 beside a fully clothed motionless adult man; one black handgun lying flat on the wooden floor beside marker 3; rainy floor-to-ceiling windows and Manhattan skyline beyond; partly open bedroom door at the back; desk with illuminated laptop and scattered papers on the right; kitchen opening farther right; green ceramic vase by the entrance. The victim remains motionless. The handgun is inert evidence and stays on the floor: nobody holds it, fires it, or creates another gun. Warm ceiling lights remain steady. There is exactly one other living person in this story, the murderer, concealed deeper in the apartment and initially out of sight. Do not introduce the murderer into view unless a later director instruction explicitly calls for a glimpse or reveal. Furniture, clues, doorways, colors, and distances persist when revisited. Quiet suspense, natural rain, believable shadows, no gore, no titles, no HUD, and no cinematic cuts."
+    },
+    "camera": {
+      "default": {
+        "static": "One uninterrupted eye-level first-person view facing into the apartment. The frame is clear, with no visible camera wearer or body parts. With no player look input, keep the same direction and framing; no automatic pan, zoom, reverse angle, or new foreground character.",
+        "dynamic": "One uninterrupted eye-level first-person view. The unseen investigator moves through the apartment only from player movement input, and turns only from player look input. Never cut to a third-person shot or show the investigator ahead of the lens."
+      }
+    },
+    "movement": {
+      "default": {
+        "static": "When the player stops, the viewpoint stays still. The victim, gun, numbered markers, furniture, vase, windows, doors, and desk remain where they were. No person enters the living room and no object acts by itself.",
+        "dynamic": "Player movement changes perspective and parallax naturally along an unobstructed walking path. Walking backward retraces the path without changing heading. Preserve every room landmark and clue at its established physical location; stop all camera travel as soon as movement input ends."
+      }
+    },
+    "events": []
+  }
+}
